@@ -16,8 +16,9 @@ export default function WhyChooseUs() {
 
         <p className="text-lg text-white/80 text-center max-w-3xl mx-auto mb-12">
           BACH is a licensed and insured contracting company serving Lagos and
-          Abuja. We specialize in renovations, new construction, and repairs.
-          Our team brings X years of combined experience to every project.
+          Abuja. We specialize in renovations, new construction, and interior
+          design. Our team brings 25+ years of combined experience to every
+          project.
         </p>
 
         {/* Trust points - keep as you have them */}
