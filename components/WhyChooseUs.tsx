@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl text-center mb-6 text-white">
-          Building Excellence Since [Year]
+          Building Excellence Since 1987
         </h2>
 
         <p className="text-lg text-white/80 text-center max-w-3xl mx-auto mb-12">
