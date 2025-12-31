@@ -4,7 +4,7 @@ export default function WhyChooseUs() {
   return (
     <section className="relative py-16 md:py-24">
       {/* Background Image */}
-      <Image src="/interior-design.avif" alt="" fill className="object-cover" />
+      <Image src="/why-choose-us.avif" alt="" fill className="object-cover" />
       {/* Color Overlay */}
       <div className="absolute inset-0 bg-primary/45" />
 
