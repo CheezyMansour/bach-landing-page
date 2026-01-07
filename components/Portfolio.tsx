@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const projects = [
   {
-    name: "Nike Store",
+    name: "Julius Berger",
     location: "Lagos, Nigeria",
     image: "/portfolio/storefront-1.avif",
   },
@@ -35,31 +35,38 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-white pb-16 md:pb-24">
+    <section id="portfolio" className="bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-3">
-            OUR WORK
+        {/* Section Header */}
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-light text-primary mb-3">
+            Selected Projects
           </h2>
+          <div className="w-16 h-px bg-silver mb-4" />
+          <p className="text-dark/60 max-w-xl">
+            A selection of work delivered for leading brands.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
               key={project.name}
-              className="relative aspect-3/4 overflow-hidden rounded-lg"
+              className="group relative aspect-square overflow-hidden rounded-md"
             >
               <Image
                 src={project.image}
                 alt={project.name}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
               />
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
               {/* Text */}
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-lg text-white mb-1">{project.name}</h3>
+                <h3 className="text-lg font-medium text-white mb-1">
+                  {project.name}
+                </h3>
                 <p className="text-sm text-white/70">{project.location}</p>
               </div>
             </div>
