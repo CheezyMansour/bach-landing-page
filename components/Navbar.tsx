@@ -146,7 +146,7 @@ export default function Navbar() {
       >
         <nav className="flex flex-col p-8 pt-12 gap-6">
           <a
-            href="#home"
+            href="#hero"
             onClick={handleLinkClick}
             className="text-xl text-dark/70 hover:text-dark transition-colors"
           >
