@@ -67,9 +67,11 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             <a
-              href="#home"
+              href="#hero"
               className={`transition-colors duration-300 ${
-                scrolled ? "text-dark/70 hover:text-dark" : "text-white/80 hover:text-white"
+                scrolled
+                  ? "text-dark/70 hover:text-dark"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               Home
@@ -77,7 +79,9 @@ export default function Navbar() {
             <a
               href="#services"
               className={`transition-colors duration-300 ${
-                scrolled ? "text-dark/70 hover:text-dark" : "text-white/80 hover:text-white"
+                scrolled
+                  ? "text-dark/70 hover:text-dark"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               Services
@@ -85,7 +89,9 @@ export default function Navbar() {
             <a
               href="#portfolio"
               className={`transition-colors duration-300 ${
-                scrolled ? "text-dark/70 hover:text-dark" : "text-white/80 hover:text-white"
+                scrolled
+                  ? "text-dark/70 hover:text-dark"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               Portfolio
@@ -109,10 +115,7 @@ export default function Navbar() {
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? (
-              <X
-                className="w-6 h-6 text-dark"
-                strokeWidth={2}
-              />
+              <X className="w-6 h-6 text-dark" strokeWidth={2} />
             ) : (
               <Menu
                 className={`w-6 h-6 transition-colors duration-300 ${
@@ -125,38 +128,48 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Backdrop */}
       <div
-        className={`md:hidden fixed inset-0 top-18 bg-white transition-all duration-300 ${
-          mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`md:hidden fixed inset-0 top-18 bg-dark/30 transition-opacity duration-300 ${
+          mobileMenuOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
+        }`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu Slide Panel */}
+      <div
+        className={`md:hidden fixed top-18 right-0 h-[calc(100vh-72px)] w-3/5 bg-white/95 backdrop-blur-sm shadow-lg transition-transform duration-300 ease-out ${
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-8 -mt-16">
+        <nav className="flex flex-col p-8 pt-12 gap-6">
           <a
             href="#home"
             onClick={handleLinkClick}
-            className="text-2xl text-dark/70 hover:text-dark transition-colors"
+            className="text-xl text-dark/70 hover:text-dark transition-colors"
           >
             Home
           </a>
           <a
             href="#services"
             onClick={handleLinkClick}
-            className="text-2xl text-dark/70 hover:text-dark transition-colors"
+            className="text-xl text-dark/70 hover:text-dark transition-colors"
           >
             Services
           </a>
           <a
             href="#portfolio"
             onClick={handleLinkClick}
-            className="text-2xl text-dark/70 hover:text-dark transition-colors"
+            className="text-xl text-dark/70 hover:text-dark transition-colors"
           >
             Portfolio
           </a>
           <a
             href="#contact"
             onClick={handleLinkClick}
-            className="bg-primary text-white hover:bg-primary-hover px-8 py-3 rounded-md font-medium text-lg transition-colors"
+            className="bg-primary text-white hover:bg-primary-hover px-6 py-3 rounded-md font-medium text-center transition-colors mt-4"
           >
             Contact
           </a>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section id="hero" className="relative min-h-screen flex items-center">
       {/* Background Image */}
       <Image
         src="/hero-image-luxury.avif"
@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-dark/55" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-24 sm:pt-20 md:pt-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6">
             Premium Contracting. Executed Without Compromise.

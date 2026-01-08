@@ -38,7 +38,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">Quick Links</h3>
+            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">
+              Quick Links
+            </h3>
             <ul className="space-y-1 md:space-y-2 text-white/60 text-xs md:text-sm">
               <li>
                 <a href="#services" className="hover:text-white">
@@ -60,7 +62,9 @@ export default function Footer() {
 
           {/* Locations */}
           <div>
-            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">Locations</h3>
+            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">
+              Locations
+            </h3>
             <ul className="space-y-1 md:space-y-2 text-white/60 text-xs md:text-sm">
               <li>Lagos</li>
               <li>Abuja</li>
@@ -71,15 +75,23 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="col-span-1 min-w-0">
-            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">Contact</h3>
+            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">
+              Contact
+            </h3>
             <ul className="space-y-1 md:space-y-2 text-white/60 text-xs md:text-sm">
               <li className="whitespace-nowrap">
-                <a href="tel:+2341234567890" className="hover:text-white transition-colors">
+                <a
+                  href="tel:01234567890"
+                  className="hover:text-white transition-colors"
+                >
                   +234 123 456 7890
                 </a>
               </li>
               <li>
-                <a href="mailto:info@bach.ng" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:info@bach.ng"
+                  className="hover:text-white transition-colors"
+                >
                   info@bach.ng
                 </a>
               </li>
