@@ -28,6 +28,11 @@ html {
   overflow-x: hidden;
 }
 
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-white);
   color: var(--color-dark);

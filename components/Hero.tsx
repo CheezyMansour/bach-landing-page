@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center">
+    <section id="hero" className="relative min-h-dvh flex items-center">
       {/* Background Image */}
       <Image
         src="/hero-image-luxury.avif"
@@ -21,7 +21,7 @@ export default function Hero() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6">
             Premium Contracting. Executed Without Compromise.
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-xl">
+          <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-xl">
             Turnkey construction, interior execution, and custom furniture
             manufacturing for brands that demand perfection.
           </p>
