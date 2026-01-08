@@ -98,19 +98,40 @@ export default function WhyBach() {
         {/* Testimonial */}
         <div
           ref={testimonialRef}
-          className={`max-w-3xl mx-auto text-center ${
-            isVisible ? "animate-fade-in-up" : "opacity-0"
-          }`}
+          className="max-w-3xl mx-auto text-center"
         >
-          {/* Quote */}
+          {/* Quote with staggered word reveal */}
           <p className="text-3xl md:text-4xl text-dark/80 italic mb-8">
-            &ldquo;Working with Bach was effortless. They delivered a flagship
-            store that exceeded every expectation. Precision, professionalism,
-            and an uncompromising standard of quality.&rdquo;
+            {`"Working with Bach was effortless. They delivered a flagship store that exceeded every expectation. Precision, professionalism, and an uncompromising standard of quality."`
+              .split(" ")
+              .map((word, index) => (
+                <span
+                  key={index}
+                  className={`inline-block mr-[0.25em] transition-all duration-500 ${
+                    isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-5"
+                  }`}
+                  style={{
+                    transitionDelay: isVisible ? `${index * 40}ms` : "0ms",
+                  }}
+                >
+                  {word}
+                </span>
+              ))}
           </p>
 
-          {/* Attribution */}
-          <div className="flex items-center justify-center gap-4">
+          {/* Attribution - appears after quote finishes */}
+          <div
+            className={`flex items-center justify-center gap-4 transition-all duration-500 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-5"
+            }`}
+            style={{
+              transitionDelay: isVisible ? "1000ms" : "0ms",
+            }}
+          >
             <div className="w-[70px] h-[70px] rounded-full overflow-hidden flex-shrink-0">
               <Image
                 src="/adidas-ceo.jpeg"
