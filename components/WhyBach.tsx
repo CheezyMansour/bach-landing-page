@@ -70,26 +70,26 @@ export default function WhyBach() {
     <section className="bg-primary/8 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-light text-primary mb-3">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-primary mb-3">
             The Difference
           </h2>
           <div className="w-16 h-px bg-silver mb-4" />
-          <p className="text-dark/60 max-w-xl">
+          <p className="text-dark/60 max-w-xl text-sm sm:text-base">
             What sets Bach apart from the rest.
           </p>
         </div>
 
         {/* Trust Points Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 mb-28">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-6 sm:gap-y-8 mb-16 sm:mb-20 md:mb-28">
           {trustPoints.map((point) => (
-            <div key={point.title} className="flex items-center gap-4">
-              <div className="flex-shrink-0">
-                <point.icon className="w-6 h-6 text-primary" strokeWidth={2} />
+            <div key={point.title} className="flex items-start sm:items-center gap-3 sm:gap-4">
+              <div className="flex-shrink-0 mt-0.5 sm:mt-0">
+                <point.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" strokeWidth={2} />
               </div>
               <div>
-                <h3 className="font-semibold text-dark mb-1">{point.title}</h3>
-                <p className="text-dark/70 text-sm">{point.description}</p>
+                <h3 className="font-semibold text-dark mb-0.5 sm:mb-1 text-sm sm:text-base">{point.title}</h3>
+                <p className="text-dark/70 text-xs sm:text-sm">{point.description}</p>
               </div>
             </div>
           ))}
@@ -101,7 +101,7 @@ export default function WhyBach() {
           className="max-w-3xl mx-auto text-center"
         >
           {/* Quote with staggered word reveal */}
-          <p className="text-3xl md:text-4xl text-dark/80 italic mb-8">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-dark/80 italic mb-6 sm:mb-8">
             {`"Working with Bach was effortless. They delivered a flagship store that exceeded every expectation. Precision, professionalism, and an uncompromising standard of quality."`
               .split(" ")
               .map((word, index) => (
@@ -123,7 +123,7 @@ export default function WhyBach() {
 
           {/* Attribution - appears after quote finishes */}
           <div
-            className={`flex items-center justify-center gap-4 transition-all duration-500 ${
+            className={`flex items-center justify-center gap-3 sm:gap-4 transition-all duration-500 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
@@ -132,7 +132,7 @@ export default function WhyBach() {
               transitionDelay: isVisible ? "1000ms" : "0ms",
             }}
           >
-            <div className="w-[70px] h-[70px] rounded-full overflow-hidden flex-shrink-0">
+            <div className="w-14 h-14 sm:w-17.5 sm:h-17.5 rounded-full overflow-hidden shrink-0">
               <Image
                 src="/adidas-ceo.jpeg"
                 alt="Bjørn Gulden"
@@ -142,8 +142,8 @@ export default function WhyBach() {
               />
             </div>
             <div className="text-left">
-              <p className="font-semibold text-dark text-lg">Bjørn Gulden</p>
-              <p className="text-dark/60">CEO, Adidas</p>
+              <p className="font-semibold text-dark text-base sm:text-lg">Bjørn Gulden</p>
+              <p className="text-dark/60 text-sm sm:text-base">CEO, Adidas</p>
             </div>
           </div>
         </div>

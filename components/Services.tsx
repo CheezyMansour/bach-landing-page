@@ -44,42 +44,42 @@ export default function Services() {
     <section id="services" className="bg-primary/8 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-light text-primary mb-3">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-primary mb-3">
             Our Capabilities
           </h2>
           <div className="w-16 h-px bg-silver mb-4" />
-          <p className="text-dark/60 max-w-xl">
+          <p className="text-dark/60 max-w-xl text-sm sm:text-base">
             End-to-end execution across construction, interiors, and manufacturing.
           </p>
         </div>
 
         {/* Service Cards */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white p-8 md:p-10 rounded-lg"
+              className="bg-white p-5 sm:p-8 md:p-10 rounded-lg"
             >
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-bold text-dark mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-dark mb-3 sm:mb-4">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-dark/70 mb-6">{service.description}</p>
+              <p className="text-dark/70 mb-4 sm:mb-6 text-sm sm:text-base">{service.description}</p>
 
               {/* Scope */}
-              <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2 mb-6 list-disc list-inside">
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-1.5 sm:gap-y-2 mb-4 sm:mb-6 list-disc list-inside">
                 {service.scope.map((item) => (
-                  <li key={item} className="text-dark/70 marker:text-primary">
+                  <li key={item} className="text-dark/70 marker:text-primary text-sm sm:text-base">
                     {item}
                   </li>
                 ))}
               </ul>
 
               {/* Closing */}
-              <p className="text-dark/60 italic">{service.closing}</p>
+              <p className="text-dark/60 italic text-sm sm:text-base">{service.closing}</p>
             </div>
           ))}
         </div>

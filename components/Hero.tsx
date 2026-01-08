@@ -16,25 +16,25 @@ export default function Hero() {
       <div className="absolute inset-0 bg-dark/55" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-20 md:pt-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-24 sm:pt-20 md:pt-8">
         <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6">
             Premium Contracting. Executed Without Compromise.
           </h1>
-          <p className="text-lg md:text-xl text-white/80 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-xl">
             Turnkey construction, interior execution, and custom furniture
             manufacturing for brands that demand perfection.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
               href="#contact"
-              className="bg-white text-primary hover:bg-white/90 px-6 py-3 rounded-md font-medium"
+              className="bg-white text-primary hover:bg-white/90 px-6 py-3 rounded-md font-medium text-center"
             >
               Book a Site Visit
             </a>
             <a
               href="#portfolio"
-              className="border border-white text-white hover:bg-white hover:text-primary px-6 py-3 rounded-md font-medium"
+              className="border border-white text-white hover:bg-white hover:text-primary px-6 py-3 rounded-md font-medium text-center"
             >
               View Our Work
             </a>
