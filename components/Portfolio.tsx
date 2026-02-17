@@ -60,6 +60,7 @@ export default function Portfolio() {
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                loading="lazy" // Don't load until user scrolls near this image
               />
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />

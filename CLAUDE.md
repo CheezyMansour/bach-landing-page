@@ -19,7 +19,7 @@ Next.js (App Router) + Tailwind CSS
 
 ## Typography
 
-- **Headings:** Montserrat (700 bold, 500 medium)
+- **Headings:** Plus Jakarta Sans (700 bold, 500 medium)
 - **Body:** Inter (400 regular)
 - **Line height:** Headings 1.2, Body 1.6
 - **Scale:** h1 48-56px, h2 36-40px, h3 24-28px, body 16-18px, small 14px
