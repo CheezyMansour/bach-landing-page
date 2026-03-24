@@ -1,71 +1,65 @@
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-primary text-white py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        {/* Logo - centered on mobile, left on desktop */}
-        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:hidden">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="font-bold text-2xl text-white tracking-wider">
-              BACH
-            </span>
-            <div className="flex flex-col gap-1">
-              <div className="w-12 h-1 bg-white/50" />
-              <div className="w-12 h-3 bg-white" />
-            </div>
-          </div>
-          <p className="text-white/60 text-xs text-center">
-            Premium construction & interior design
-          </p>
-        </div>
-
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-12">
-          {/* Logo & About - desktop only */}
-          <div className="hidden md:block">
-            <div className="mb-4 flex items-center gap-2">
-              <span className="font-bold text-3xl text-white tracking-wider">
+    <footer id="contact" className="bg-footer text-white">
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+          {/* Brand column */}
+          <div className="md:col-span-4">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="font-bold text-2xl md:text-3xl text-white tracking-wider">
                 BACH
               </span>
               <div className="flex flex-col gap-1">
-                <div className="w-16 h-1.5 bg-white/50" />
-                <div className="w-16 h-4 bg-white" />
+                <div className="w-12 md:w-16 h-1 md:h-1.5 bg-white/20" />
+                <div className="w-12 md:w-16 h-3 md:h-4 bg-white/40" />
               </div>
             </div>
-            <p className="text-white/60 text-sm">
-              Quality construction and interior design services in Lagos and
-              Abuja.
+            <p className="text-white/70 text-sm leading-relaxed max-w-xs">
+              Premium construction, interior design, and bespoke furniture
+              manufacturing across Nigeria.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">
-              Quick Links
+          <div className="md:col-span-2">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-white/50 mb-5">
+              Navigate
             </h3>
-            <ul className="space-y-1 md:space-y-2 text-white/60 text-xs md:text-sm">
+            <ul className="space-y-3 text-sm">
               <li>
-                <a href="#services" className="hover:text-white">
+                <a
+                  href="#services"
+                  className="text-white/80 hover:text-white transition-colors duration-200"
+                >
                   Services
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="hover:text-white">
+                <a
+                  href="#portfolio"
+                  className="text-white/80 hover:text-white transition-colors duration-200"
+                >
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white">
-                  Contact
+                <a
+                  href="#about"
+                  className="text-white/80 hover:text-white transition-colors duration-200"
+                >
+                  About
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Locations */}
-          <div>
-            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">
+          <div className="md:col-span-3">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-white/50 mb-5">
               Locations
             </h3>
-            <ul className="space-y-1 md:space-y-2 text-white/60 text-xs md:text-sm">
+            <ul className="space-y-3 text-sm text-white/80">
               <li>Lagos</li>
               <li>Abuja</li>
               <li>Port Harcourt</li>
@@ -73,16 +67,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="col-span-1 min-w-0">
-            <h3 className="font-medium mb-3 md:mb-4 text-sm md:text-base">
-              Contact
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-white/50 mb-5">
+              Get in Touch
             </h3>
-            <ul className="space-y-1 md:space-y-2 text-white/60 text-xs md:text-sm">
-              <li className="whitespace-nowrap">
+            <ul className="space-y-3 text-sm">
+              <li>
                 <a
-                  href="tel:01234567890"
-                  className="hover:text-white transition-colors"
+                  href="tel:+2341234567890"
+                  className="text-white/80 hover:text-white transition-colors duration-200"
                 >
                   +234 123 456 7890
                 </a>
@@ -90,18 +84,32 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@bach.ng"
-                  className="hover:text-white transition-colors"
+                  className="text-white/80 hover:text-white transition-colors duration-200"
                 >
                   info@bach.ng
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/2341234567890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors duration-200"
+                >
+                  WhatsApp
                 </a>
               </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="border-t border-white/10 mt-8 md:mt-12 pt-6 md:pt-8 text-center text-white/40 text-xs md:text-sm">
-          © 2026 BACH Contracting. All rights reserved.
+      {/* Bottom bar */}
+      <div className="border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6">
+          <p className="text-center text-white/40 text-xs tracking-wide">
+            © 2026 BACH Contracting. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <span
               className={`font-bold text-2xl md:text-3xl tracking-wider transition-colors duration-300 ${
-                scrolled || mobileMenuOpen ? "text-primary" : "text-white"
+                scrolled || mobileMenuOpen ? "text-primary" : "text-white/60"
               }`}
             >
               BACH
@@ -53,12 +53,12 @@ export default function Navbar() {
             <div className="flex flex-col gap-1">
               <div
                 className={`w-12 md:w-16 h-1 md:h-1.5 transition-colors duration-300 ${
-                  scrolled || mobileMenuOpen ? "bg-silver" : "bg-white/50"
+                  scrolled || mobileMenuOpen ? "bg-silver" : "bg-white/30"
                 }`}
               />
               <div
                 className={`w-12 md:w-16 h-3 md:h-4 transition-colors duration-300 ${
-                  scrolled || mobileMenuOpen ? "bg-primary" : "bg-white"
+                  scrolled || mobileMenuOpen ? "bg-primary" : "bg-white/50"
                 }`}
               />
             </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
               className={`transition-colors duration-300 ${
                 scrolled
                   ? "text-dark/70 hover:text-dark"
-                  : "text-white/80 hover:text-white"
+                  : "text-white/50 hover:text-white/80"
               }`}
             >
               Home
@@ -81,7 +81,7 @@ export default function Navbar() {
               className={`transition-colors duration-300 ${
                 scrolled
                   ? "text-dark/70 hover:text-dark"
-                  : "text-white/80 hover:text-white"
+                  : "text-white/50 hover:text-white/80"
               }`}
             >
               Services
@@ -91,7 +91,7 @@ export default function Navbar() {
               className={`transition-colors duration-300 ${
                 scrolled
                   ? "text-dark/70 hover:text-dark"
-                  : "text-white/80 hover:text-white"
+                  : "text-white/50 hover:text-white/80"
               }`}
             >
               Portfolio
@@ -101,7 +101,7 @@ export default function Navbar() {
               className={`px-4 py-2 rounded-md font-medium transition-colors duration-300 ${
                 scrolled
                   ? "bg-primary text-white hover:bg-primary-hover"
-                  : "bg-white text-primary hover:bg-white/90"
+                  : "bg-white/15 text-white/60 hover:bg-white/25 hover:text-white/80"
               }`}
             >
               Contact

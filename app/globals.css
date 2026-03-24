@@ -8,6 +8,7 @@
   --color-dark: #1a1a1a;
   --color-white: #ffffff;
   --color-light: #f8f9fa;
+  --color-footer: #0f1c2e;
 
   /* animations */
   --animate-fade-in-up: fade-in-up 1.5s ease-out forwards;
