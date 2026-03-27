@@ -1,54 +1,51 @@
+import Logo from "./Logo";
+
 export default function Footer() {
   return (
     <footer id="contact" className="bg-footer text-white">
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 sm:gap-12 md:gap-8">
           {/* Brand column */}
-          <div className="md:col-span-4">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-bold text-2xl md:text-3xl text-white tracking-wider">
-                BACH
-              </span>
-              <div className="flex flex-col gap-1">
-                <div className="w-12 md:w-16 h-1 md:h-1.5 bg-white/20" />
-                <div className="w-12 md:w-16 h-3 md:h-4 bg-white/40" />
-              </div>
+          <div className="sm:col-span-2 md:col-span-4">
+            <div className="mb-4">
+              <Logo variant="white" />
             </div>
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
-              Premium construction, interior design, and bespoke furniture
-              manufacturing across Nigeria.
+              Integrated construction engineering across Nigeria and West
+              Africa. Civil, structural, electrical, and solar — delivered
+              end-to-end.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="md:col-span-2">
-            <h3 className="text-xs uppercase tracking-[0.2em] text-white/50 mb-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 sm:mb-5">
               Navigate
-            </h3>
-            <ul className="space-y-3 text-sm">
+            </p>
+            <ul className="space-y-1">
               <li>
                 <a
                   href="#services"
-                  className="text-white/80 hover:text-white transition-colors duration-200"
+                  className="inline-flex items-center text-sm text-white/80 hover:text-white transition-colors duration-200 py-1.5"
                 >
                   Services
                 </a>
               </li>
               <li>
                 <a
-                  href="#portfolio"
-                  className="text-white/80 hover:text-white transition-colors duration-200"
+                  href="#about"
+                  className="inline-flex items-center text-sm text-white/80 hover:text-white transition-colors duration-200 py-1.5"
                 >
-                  Portfolio
+                  About
                 </a>
               </li>
               <li>
                 <a
-                  href="#about"
-                  className="text-white/80 hover:text-white transition-colors duration-200"
+                  href="#why-bach"
+                  className="inline-flex items-center text-sm text-white/80 hover:text-white transition-colors duration-200 py-1.5"
                 >
-                  About
+                  Why BACH
                 </a>
               </li>
             </ul>
@@ -56,27 +53,26 @@ export default function Footer() {
 
           {/* Locations */}
           <div className="md:col-span-3">
-            <h3 className="text-xs uppercase tracking-[0.2em] text-white/50 mb-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 sm:mb-5">
               Locations
-            </h3>
-            <ul className="space-y-3 text-sm text-white/80">
+            </p>
+            <ul className="space-y-2 sm:space-y-3 text-sm text-white/80">
+              <li>Abuja, FCT</li>
               <li>Lagos</li>
-              <li>Abuja</li>
-              <li>Port Harcourt</li>
               <li>Kano</li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact — proper touch targets for phone/email links */}
           <div className="md:col-span-3">
-            <h3 className="text-xs uppercase tracking-[0.2em] text-white/50 mb-5">
-              Get in Touch
-            </h3>
-            <ul className="space-y-3 text-sm">
+            <p className="text-xs uppercase tracking-[0.2em] text-white/50 mb-4 sm:mb-5">
+              Contact
+            </p>
+            <ul className="space-y-1">
               <li>
                 <a
                   href="tel:+2341234567890"
-                  className="text-white/80 hover:text-white transition-colors duration-200"
+                  className="inline-flex items-center text-sm text-white/80 hover:text-white transition-colors duration-200 py-1.5"
                 >
                   +234 123 456 7890
                 </a>
@@ -84,7 +80,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@bach.ng"
-                  className="text-white/80 hover:text-white transition-colors duration-200"
+                  className="inline-flex items-center text-sm text-white/80 hover:text-white transition-colors duration-200 py-1.5"
                 >
                   info@bach.ng
                 </a>
@@ -94,7 +90,7 @@ export default function Footer() {
                   href="https://wa.me/2341234567890"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/80 hover:text-white transition-colors duration-200"
+                  className="inline-flex items-center text-sm text-white/80 hover:text-white transition-colors duration-200 py-1.5"
                 >
                   WhatsApp
                 </a>
@@ -106,9 +102,12 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6">
-          <p className="text-center text-white/40 text-xs tracking-wide">
-            © 2026 BACH Contracting. All rights reserved.
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+          <p className="text-white/40 text-xs tracking-wide">
+            &copy; 2026 Batch Project Limited. All rights reserved.
+          </p>
+          <p className="text-white/30 text-xs">
+            RC 151645050
           </p>
         </div>
       </div>

@@ -12,6 +12,8 @@
 
   /* animations */
   --animate-fade-in-up: fade-in-up 1.5s ease-out forwards;
+  --animate-kenburns: kenburns 18s ease-in-out infinite alternate;
+  --animate-fadein: fadein ease-out forwards;
 }
 
 @keyframes fade-in-up {
@@ -23,6 +25,22 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Hero Ken Burns — slow zoom in, then back out (alternate), 18s per direction */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+/* Hero slide crossfade — incoming image fades in on top of current */
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 html {
@@ -40,14 +58,47 @@ body {
   font-family: var(--font-inter), sans-serif;
   font-weight: 400;
   overflow-x: hidden;
+  /* Prevent iOS text-size-adjust on orientation change */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
+/* Playfair Display 700 for all headings */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading), sans-serif;
-  font-weight: 500;
+  font-family: var(--font-heading), serif;
+  letter-spacing: 0.01em;
+}
+
+/* Inter 300 for body */
+p, a, li, span, label, input, textarea {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 300;
+}
+
+/* ── Mobile-first refinements ────────────────────────────── */
+
+/* Ensure minimum touch target size (48×48 per WCAG) */
+@media (pointer: coarse) {
+  a, button {
+    min-height: 44px;
+  }
+}
+
+/* Smooth momentum scrolling on iOS */
+@supports (-webkit-overflow-scrolling: touch) {
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Safe area padding for notched devices (iPhone X+) */
+@supports (padding: env(safe-area-inset-bottom)) {
+  footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }

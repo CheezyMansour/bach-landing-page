@@ -2,36 +2,30 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when clicking a link
-  const handleLinkClick = () => {
-    setMobileMenuOpen(false);
-  };
+  const handleLinkClick = () => setMobileMenuOpen(false);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
+    return () => { document.body.style.overflow = "unset"; };
   }, [mobileMenuOpen]);
+
+  const linkClass = `relative transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-px after:transition-all after:duration-300 ${
+    scrolled
+      ? "text-dark/70 hover:text-dark after:bg-dark after:w-0 hover:after:w-full"
+      : "text-white after:bg-white after:w-0 hover:after:w-full"
+  }`;
 
   return (
     <header
@@ -39,140 +33,68 @@ export default function Navbar() {
         scrolled || mobileMenuOpen ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+      {/* Safe area padding for notched devices */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4 sm:py-5">
+
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <span
-              className={`font-bold text-2xl md:text-3xl tracking-wider transition-colors duration-300 ${
-                scrolled || mobileMenuOpen ? "text-primary" : "text-white/60"
-              }`}
-            >
-              BACH
-            </span>
-            <div className="flex flex-col gap-1">
-              <div
-                className={`w-12 md:w-16 h-1 md:h-1.5 transition-colors duration-300 ${
-                  scrolled || mobileMenuOpen ? "bg-silver" : "bg-white/30"
-                }`}
-              />
-              <div
-                className={`w-12 md:w-16 h-3 md:h-4 transition-colors duration-300 ${
-                  scrolled || mobileMenuOpen ? "bg-primary" : "bg-white/50"
-                }`}
-              />
-            </div>
-          </div>
+          <a href="#hero" className="transition-all duration-300">
+            <Logo variant={scrolled || mobileMenuOpen ? "color" : "white"} />
+          </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a
-              href="#hero"
-              className={`transition-colors duration-300 ${
-                scrolled
-                  ? "text-dark/70 hover:text-dark"
-                  : "text-white/50 hover:text-white/80"
-              }`}
-            >
-              Home
-            </a>
-            <a
-              href="#services"
-              className={`transition-colors duration-300 ${
-                scrolled
-                  ? "text-dark/70 hover:text-dark"
-                  : "text-white/50 hover:text-white/80"
-              }`}
-            >
-              Services
-            </a>
-            <a
-              href="#portfolio"
-              className={`transition-colors duration-300 ${
-                scrolled
-                  ? "text-dark/70 hover:text-dark"
-                  : "text-white/50 hover:text-white/80"
-              }`}
-            >
-              Portfolio
-            </a>
-            <a
-              href="#contact"
-              className={`px-4 py-2 rounded-md font-medium transition-colors duration-300 ${
-                scrolled
-                  ? "bg-primary text-white hover:bg-primary-hover"
-                  : "bg-white/15 text-white/60 hover:bg-white/25 hover:text-white/80"
-              }`}
-            >
-              Contact
-            </a>
+          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+            <a href="#about" className={linkClass}>About</a>
+            <a href="#services" className={linkClass}>Services</a>
+            <a href="#why-bach" className={linkClass}>Why BACH</a>
+            <a href="#contact" className={linkClass}>Contact</a>
           </nav>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile hamburger — 44px minimum touch target */}
           <button
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-md active:bg-dark/5 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-dark" strokeWidth={2} />
-            ) : (
-              <Menu
-                className={`w-6 h-6 transition-colors duration-300 ${
-                  scrolled ? "text-dark" : "text-white"
-                }`}
-                strokeWidth={2}
-              />
-            )}
+            {mobileMenuOpen
+              ? <X className="w-6 h-6 text-dark" strokeWidth={2} />
+              : <Menu className={`w-6 h-6 transition-colors duration-300 ${scrolled ? "text-dark" : "text-white"}`} strokeWidth={2} />
+            }
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Backdrop */}
+      {/* Mobile backdrop */}
       <div
-        className={`md:hidden fixed inset-0 top-18 bg-dark/30 transition-opacity duration-300 ${
-          mobileMenuOpen
-            ? "opacity-100 visible"
-            : "opacity-0 invisible pointer-events-none"
+        className={`md:hidden fixed inset-0 top-[60px] bg-dark/40 backdrop-blur-[2px] transition-opacity duration-300 ${
+          mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
         onClick={() => setMobileMenuOpen(false)}
       />
 
-      {/* Mobile Menu Slide Panel */}
+      {/* Mobile slide panel — full width on very small screens, 70% on larger */}
       <div
-        className={`md:hidden fixed top-18 right-0 h-[calc(100vh-72px)] w-3/5 bg-white/95 backdrop-blur-sm shadow-lg transition-transform duration-300 ease-out ${
+        className={`md:hidden fixed top-[60px] right-0 h-[calc(100dvh-60px)] w-4/5 max-w-[300px] bg-white shadow-2xl transition-transform duration-300 ease-out ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col p-8 pt-12 gap-6">
-          <a
-            href="#hero"
-            onClick={handleLinkClick}
-            className="text-xl text-dark/70 hover:text-dark transition-colors"
-          >
-            Home
-          </a>
-          <a
-            href="#services"
-            onClick={handleLinkClick}
-            className="text-xl text-dark/70 hover:text-dark transition-colors"
-          >
-            Services
-          </a>
-          <a
-            href="#portfolio"
-            onClick={handleLinkClick}
-            className="text-xl text-dark/70 hover:text-dark transition-colors"
-          >
-            Portfolio
-          </a>
-          <a
-            href="#contact"
-            onClick={handleLinkClick}
-            className="bg-primary text-white hover:bg-primary-hover px-6 py-3 rounded-md font-medium text-center transition-colors mt-4"
-          >
-            Contact
-          </a>
+        <nav className="flex flex-col px-6 pt-8 pb-6 gap-1">
+          {[
+            { href: "#about", label: "About" },
+            { href: "#services", label: "Services" },
+            { href: "#why-bach", label: "Why BACH" },
+            { href: "#contact", label: "Contact" },
+          ].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={handleLinkClick}
+              className="flex items-center py-4 text-lg text-dark/70 hover:text-dark active:text-primary border-b border-silver/20 last:border-0 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
