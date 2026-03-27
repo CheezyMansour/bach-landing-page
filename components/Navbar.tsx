@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center py-4 sm:py-5">
 
           {/* Logo */}
-          <a href="#hero" className="transition-all duration-300">
+          <a href="#hero" className="flex items-center h-11 transition-all duration-300">
             <Logo variant={scrolled || mobileMenuOpen ? "color" : "white"} />
           </a>
 
